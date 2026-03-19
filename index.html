@@ -1,175 +1,395 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIKOU Junior - Koding & AR untuk Anak</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body { font-family: 'Quicksand', sans-serif; }
         h1, h2, h3, .brand { font-family: 'Fredoka One', cursive; }
         
-        .bg-playful-blue { background-color: #4A90E2; }
         .text-playful-blue { color: #4A90E2; }
+        .bg-playful-blue { background-color: #4A90E2; }
         .bg-sunny-yellow { background-color: #FFD93D; }
-        .bg-magic-purple { background-color: #A855F7; }
         .bg-mint { background-color: #6BCB77; }
         
-        .blob {
-            position: absolute;
-            z-index: -1;
-            filter: blur(40px);
-            opacity: 0.4;
-        }
+        .blob { position: absolute; z-index: -1; filter: blur(45px); opacity: 0.3; }
 
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
             100% { transform: translateY(0px) rotate(0deg); }
         }
         .float-anim { animation: float 4s ease-in-out infinite; }
+
+        /* Menyembunyikan scrollbar untuk slider */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-slate-50 overflow-x-hidden">
+<body class="bg-slate-50 overflow-x-hidden text-slate-700">
 
-    <div class="blob bg-sunny-yellow w-64 h-64 rounded-full top-0 -left-20"></div>
-    <div class="blob bg-playful-blue w-80 h-80 rounded-full bottom-0 -right-20"></div>
-
-    <nav class="p-5 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+    <nav class="p-5 flex justify-between items-center bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-100 shadow-sm">
         <div class="brand text-3xl tracking-wide text-playful-blue">RIKOU<span class="text-orange-400">JUNIOR</span></div>
-        <a href="#daftar" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-2 rounded-full transition-all shadow-md">Daftar Kelas!</a>
+        <a href="#daftar" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-2 rounded-full transition-all shadow-md">Daftar Trial!</a>
     </nav>
 
-    <header class="container mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center relative">
+    <header class="container mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center relative">
         <div class="md:w-1/2 text-center md:text-left z-10" data-aos="fade-up">
-            <span class="inline-block bg-white text-orange-500 px-4 py-1 rounded-full text-sm font-bold shadow-sm mb-4 border border-orange-100">🚀 Online Short Course</span>
+            <span class="inline-block bg-white text-orange-500 px-4 py-1 rounded-full text-sm font-bold shadow-sm mb-4 border border-orange-100">🚀 Online Short Course SD Kls 1-4</span>
             <h1 class="text-4xl md:text-6xl leading-tight mb-6 text-slate-800">
-                Wujudkan <span class="text-playful-blue">Imajinasi</span> Si Kecil Lewat <span class="text-purple-500">Koding</span> & <span class="text-mint text-emerald-500">AR.</span>
+                Wujudkan <span class="text-playful-blue">Imajinasi</span> Si Kecil Lewat <span class="text-purple-500">Koding</span> & <span class="text-emerald-500">AR.</span>
             </h1>
-            <p class="text-lg text-slate-600 mb-8 font-medium">Belajar bikin game AI dan memunculkan monster 3D langsung dari rumah. Seru, mudah, dan menyenangkan!</p>
+            <p class="text-lg text-slate-600 mb-8 font-medium">Belajar bikin game sendiri dan memunculkan karakter 3D langsung dari rumah. Seru, mudah, dan pastinya menyenangkan!</p>
             <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                <a href="#program" class="bg-playful-blue text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:scale-105 transition-transform">Pilih Kelas</a>
-                <a href="#daftar" class="bg-sunny-yellow text-slate-800 font-bold px-10 py-4 rounded-2xl shadow-lg shadow-yellow-100 hover:scale-105 transition-transform">Trial Gratis</a>
+                <a href="#program" class="bg-playful-blue text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:-translate-y-1 transition-transform">Lihat 3 Paket Kami</a>
             </div>
         </div>
         <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
-            <div class="float-anim bg-white p-6 rounded-[2rem] shadow-2xl rotate-3 relative z-10">
-                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=rikou&backgroundColor=b6e3f4" alt="Robot" class="w-64 h-64">
+            <div class="float-anim bg-white p-6 rounded-[2.5rem] shadow-2xl rotate-3 relative z-10 border-4 border-sunny-yellow">
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=rikou&backgroundColor=b6e3f4" alt="Robot RIKOU" class="w-64 h-64 rounded-3xl">
             </div>
-            <div class="absolute -top-10 right-10 float-anim" style="animation-delay: 1s text-5xl">🎮</div>
-            <div class="absolute -bottom-5 left-10 float-anim" style="animation-delay: 2s text-5xl">✨</div>
-            <div class="absolute top-1/2 -left-5 text-4xl">🐱</div>
+            <div class="absolute -top-5 right-12 float-anim text-5xl" style="animation-delay: 1s">🎮</div>
+            <div class="absolute -bottom-5 left-12 float-anim text-5xl" style="animation-delay: 2s">👓</div>
         </div>
     </header>
 
-    <section id="program" class="py-20">
+    <section id="program" class="py-20 bg-white relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl text-slate-800 mb-4">Materi Apa Yang Akan Dipelajari?</h2>
+                <h2 class="text-3xl md:text-4xl text-slate-800 mb-4">Pilih Petualangan Digitalmu!</h2>
                 <div class="w-24 h-2 bg-sunny-yellow mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-[2.5rem] border-b-8 border-playful-blue shadow-xl hover:-translate-y-2 transition-all" data-aos="zoom-in">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border-b-8 border-playful-blue shadow-lg hover:-translate-y-2 transition-all flex flex-col h-full" data-aos="fade-up">
                     <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🐱</div>
-                    <h3 class="text-2xl mb-4 text-playful-blue">Scratch Game Mastery</h3>
-                    <ul class="text-slate-600 space-y-3 mb-8">
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Dasar Logika Koding</li>
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Membuat Game Seru</li>
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Integrasi **AI (Kecerdasan Buatan)**</li>
+                    <h3 class="text-2xl mb-2 text-playful-blue">Basic Scratch</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-semibold">Langkah pertama jadi programmer cilik.</p>
+                    <ul class="text-slate-600 space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center"><span class="text-playful-blue mr-2">✓</span> Pengenalan blok logika koding</li>
+                        <li class="flex items-center"><span class="text-playful-blue mr-2">✓</span> Membuat animasi cerita bergerak</li>
                     </ul>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400 bg-slate-100 px-3 py-1 rounded-full">Mulai dari Gratis</span>
+                    <span class="inline-block text-center font-bold text-playful-blue bg-blue-100 px-4 py-2 rounded-full w-full mt-auto">Paket Basic (Free Course)</span>
                 </div>
-
-                <div class="bg-white p-8 rounded-[2.5rem] border-b-8 border-purple-500 shadow-xl hover:-translate-y-2 transition-all" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-6">👓</div>
-                    <h3 class="text-2xl mb-4 text-purple-600">Magic AR Creator</h3>
-                    <ul class="text-slate-600 space-y-3 mb-8">
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Belajar Assemblr Edu</li>
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Model 3D dengan Kivicube</li>
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Proyek AR di Dunia Nyata</li>
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border-b-8 border-orange-400 shadow-lg hover:-translate-y-2 transition-all flex flex-col h-full relative" data-aos="fade-up" data-aos-delay="150">
+                    <div class="absolute -top-4 right-6 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Paling Seru!</div>
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🤖</div>
+                    <h3 class="text-2xl mb-2 text-orange-500">Scratch with AI</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-semibold">Bikin game yang lebih cerdas!</p>
+                    <ul class="text-slate-600 space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center"><span class="text-orange-400 mr-2">✓</span> Pengenalan Artificial Intelligence</li>
+                        <li class="flex items-center"><span class="text-orange-400 mr-2">✓</span> Sensor gerak & pendeteksi wajah</li>
                     </ul>
-                    <span class="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-50 px-3 py-1 rounded-full">Freemium Project</span>
+                    <span class="inline-block text-center font-bold text-orange-600 bg-orange-100 px-4 py-2 rounded-full w-full mt-auto">Paket Premium (Freemium)</span>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border-b-8 border-purple-500 shadow-lg hover:-translate-y-2 transition-all flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🪄</div>
+                    <h3 class="text-2xl mb-2 text-purple-600">Magic AR Creator</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-semibold">Sulap gambar jadi nyata di sekitarmu.</p>
+                    <ul class="text-slate-600 space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Desain 3D di Assemblr Edu</li>
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Integrasi model 3D di Kivicube</li>
+                    </ul>
+                    <span class="inline-block text-center font-bold text-purple-600 bg-purple-100 px-4 py-2 rounded-full w-full mt-auto">Paket Premium (Freemium)</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="coach" class="bg-playful-blue py-20 text-white rounded-[3rem] mx-4">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/3 flex justify-center">
-                <div class="relative">
-                    <div class="w-48 h-48 bg-white rounded-full overflow-hidden border-8 border-blue-400">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Paul" alt="Coach Paulus">
-                    </div>
-                    <div class="absolute -bottom-4 bg-sunny-yellow text-slate-800 font-bold px-4 py-1 rounded-lg text-sm">Coach Paulus</div>
-                </div>
+    <section class="py-20 bg-playful-blue text-white relative rounded-[3rem] mx-4 my-8 shadow-2xl overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl mb-4 text-white">Contoh Karya Seru Nanti!</h2>
+                <p class="text-blue-100">Klik kartu di bawah ini untuk melihat cuplikan video projectnya.</p>
             </div>
-            <div class="md:w-2/3 text-center md:text-left">
-                <h2 class="text-3xl mb-6 uppercase tracking-tight">Belajar Dari Ahlinya!</h2>
-                <p class="text-xl opacity-90 leading-relaxed mb-6">
-                    Satu-satunya kurikulum anak yang didesain langsung oleh <strong>Dosen IT berpengalaman 10+ tahun</strong>. Saya memegang sertifikasi <strong>MCE (Microsoft)</strong> dan <strong>GCE (Google)</strong> untuk memastikan pengajaran standar dunia!
-                </p>
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold border border-white/30">Microsoft Certified</span>
-                    <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold border border-white/30">Google Certified</span>
-                    <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold border border-white/30">10+ Years Exp</span>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div onclick="openVideoModal('game1')" class="bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20 cursor-pointer hover:bg-white/20 transition-all hover:scale-105 group" data-aos="zoom-in">
+                    <div class="h-40 bg-white/20 rounded-2xl mb-4 flex items-center justify-center text-5xl relative overflow-hidden">
+                        🍎🛸
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">▶ Putar Video</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-sunny-yellow">Game Tangkap Apel</h4>
+                    <p class="text-sm text-blue-50">Menggunakan logika dasar Scratch untuk menggerakkan karakter.</p>
+                </div>
+                <div onclick="openVideoModal('game2')" class="bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20 cursor-pointer hover:bg-white/20 transition-all hover:scale-105 group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-40 bg-white/20 rounded-2xl mb-4 flex items-center justify-center text-5xl relative overflow-hidden">
+                        👤📸
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">▶ Putar Video</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-sunny-yellow">Ninja Face Tracking</h4>
+                    <p class="text-sm text-blue-50">Menggunakan fitur AI Camera di Scratch. Karakter mengikuti wajah!</p>
+                </div>
+                <div onclick="openVideoModal('game3')" class="bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20 cursor-pointer hover:bg-white/20 transition-all hover:scale-105 group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-40 bg-white/20 rounded-2xl mb-4 flex items-center justify-center text-5xl relative overflow-hidden">
+                        🦖📱
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">▶ Putar Video</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-sunny-yellow">Dinosaurus di Kamar</h4>
+                    <p class="text-sm text-blue-50">Project AR Kivicube. Memunculkan dinosaurus 3D ukuran asli.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="daftar" class="py-24">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden border border-slate-100">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-sunny-yellow rounded-bl-full opacity-20"></div>
-                
-                <h2 class="text-3xl text-center text-slate-800 mb-10">Pesan Slot Weekend Anak Ayah/Bunda</h2>
-                
-                <form id="waForm" class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="font-bold text-slate-700 ml-2 text-sm">Nama Ayah / Bunda</label>
-                        <input type="text" id="parent" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-playful-blue focus:outline-none transition-all" placeholder="Contoh: Pak Budi" required>
+    <section class="py-20 bg-slate-50 overflow-hidden relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl text-slate-800 mb-4">Apa Kata Mereka?</h2>
+                <p class="text-slate-500">Keseruan dari mereka yang sudah mencoba metode kami.</p>
+            </div>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <div class="overflow-hidden rounded-3xl">
+                    <div id="testi-track" class="flex transition-transform duration-700 ease-in-out">
+                        
+                        <div class="w-full flex-shrink-0 px-2 testi-slide">
+                            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 relative h-full">
+                                <div class="text-5xl text-sunny-yellow absolute -top-2 left-6">"</div>
+                                <p class="text-slate-600 italic mb-8 mt-6 text-lg">"Awalnya saya ragu anak kelas 2 SD bisa koding. Ternyata metode pendekatannya seperti main game. Sekarang malah anak saya yang selalu nagih nanya kapan kelas RIKOU lagi!"</p>
+                                <div class="flex items-center gap-4 border-t pt-6">
+                                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-500 text-xl">B</div>
+                                    <div>
+                                        <p class="font-bold text-slate-800">Bunda Siska</p>
+                                        <p class="text-sm text-slate-400">Orang tua dari Rio (Kelas 2 SD)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full flex-shrink-0 px-2 testi-slide">
+                            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 relative h-full">
+                                <div class="text-5xl text-sunny-yellow absolute -top-2 left-6">"</div>
+                                <p class="text-slate-600 italic mb-8 mt-6 text-lg">"Project AR-nya luar biasa. Anak saya sangat bangga memamerkan 'hewan peliharaan' dinosaurus 3D-nya ke kakek dan neneknya lewat HP. Sangat direkomendasikan."</p>
+                                <div class="flex items-center gap-4 border-t pt-6">
+                                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-500 text-xl">A</div>
+                                    <div>
+                                        <p class="font-bold text-slate-800">Ayah Bima</p>
+                                        <p class="text-sm text-slate-400">Orang tua dari Kevin (Kelas 4 SD)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full flex-shrink-0 px-2 testi-slide">
+                            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 relative h-full">
+                                <div class="text-5xl text-sunny-yellow absolute -top-2 left-6">"</div>
+                                <p class="text-slate-600 italic mb-8 mt-6 text-lg">"Coach Paulus sangat sabar mengajari anak-anak. Materi Artificial Intelligence yang kesannya berat jadi sangat simpel dipahami anak saya."</p>
+                                <div class="flex items-center gap-4 border-t pt-6">
+                                    <div class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-500 text-xl">M</div>
+                                    <div>
+                                        <p class="font-bold text-slate-800">Mama Cinta</p>
+                                        <p class="text-sm text-slate-400">Orang tua dari Arka (Kelas 3 SD)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="space-y-2">
-                        <label class="font-bold text-slate-700 ml-2 text-sm">Nama & Kelas Anak</label>
-                        <input type="text" id="child" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-playful-blue focus:outline-none transition-all" placeholder="Contoh: Andi - Kelas 3 SD" required>
-                    </div>
-                    <div class="md:col-span-2 space-y-2">
-                        <label class="font-bold text-slate-700 ml-2 text-sm">Pilih Fokus Minat</label>
-                        <select id="topic" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-playful-blue focus:outline-none transition-all appearance-none cursor-pointer">
-                            <option>Belajar Scratch (Gratis Basic)</option>
-                            <option>Membuat Game AI (Premium)</option>
-                            <option>Bikin Augmented Reality (Premium)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="md:col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-5 rounded-2xl shadow-xl shadow-orange-100 transition-all text-xl mt-4">
-                        Daftar via WhatsApp Sekarang! 📱
+                </div>
+
+                <button onclick="prevSlide()" class="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 bg-white w-12 h-12 rounded-full shadow-lg text-playful-blue font-bold text-xl hover:bg-slate-50 hover:scale-110 transition-all z-10">❮</button>
+                <button onclick="nextSlide()" class="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-white w-12 h-12 rounded-full shadow-lg text-playful-blue font-bold text-xl hover:bg-slate-50 hover:scale-110 transition-all z-10">❯</button>
+            </div>
+            
+            <div class="flex justify-center gap-2 mt-8" id="slider-dots">
+                </div>
+        </div>
+    </section>
+
+    <section id="daftar" class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="bg-sunny-yellow p-10 md:p-14 rounded-[3rem] shadow-xl relative overflow-hidden">
+                <h2 class="text-3xl text-center text-slate-800 mb-8">Amankan Slot Weekend Anak Anda!</h2>
+                <form id="waForm" class="space-y-4">
+                    <input type="text" id="parent" class="w-full bg-white/90 p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-orange-300" placeholder="Nama Ayah / Bunda" required>
+                    <input type="text" id="child" class="w-full bg-white/90 p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-orange-300" placeholder="Nama Anak & Kelas (Contoh: Budi - Kelas 3)" required>
+                    <select id="topic" class="w-full bg-white/90 p-4 rounded-2xl focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium">
+                        <option value="Basic Scratch">Paket 1: Basic Scratch (Gratis)</option>
+                        <option value="Scratch AI">Paket 2: Scratch with AI (Freemium)</option>
+                        <option value="Magic AR">Paket 3: Magic AR Creator (Freemium)</option>
+                    </select>
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-5 rounded-2xl shadow-lg transition-all text-lg mt-6">
+                        Kirim Pesan ke WhatsApp Coach 📱
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-400">
-        <p class="font-bold mb-2">RIKOU JUNIOR</p>
-        <p class="text-sm">© 2026 CV Rikou Indonesia. All Rights Reserved.</p>
+    <footer class="py-10 text-center text-slate-500 bg-slate-50">
+        <p class="font-bold text-slate-700 text-lg mb-1 brand text-playful-blue">RIKOU<span class="text-orange-400">JUNIOR</span></p>
+        <p class="text-sm">© 2026 CV Rikou - Malang, Indonesia. All Rights Reserved.</p>
     </footer>
+
+    <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl w-full max-w-3xl overflow-hidden relative transform scale-95 transition-transform duration-300" id="modalContent">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-red-500 hover:text-white text-slate-500 w-10 h-10 rounded-full font-bold text-lg transition-colors z-10">✕</button>
+            
+            <div class="p-6 md:p-8">
+                <h3 id="modalTitle" class="text-2xl md:text-3xl font-bold mb-2 text-playful-blue">Judul Proyek</h3>
+                <p id="modalDesc" class="text-slate-600 mb-6">Deskripsi proyek akan muncul di sini.</p>
+                
+                <div class="relative w-full overflow-hidden rounded-2xl bg-slate-800" style="padding-top: 56.25%;">
+                    <iframe id="videoPlayer" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                    <div id="videoPlaceholder" class="absolute inset-0 flex items-center justify-center text-slate-400 flex-col">
+                        <span class="text-6xl mb-4">▶️</span>
+                        <p>Video Gameplay akan diputar di sini</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="#daftar" onclick="closeVideoModal()" class="inline-block bg-sunny-yellow text-slate-800 font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform">Saya Mau Belajar Ini!</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inisialisasi AOS (Animasi Scroll)
         AOS.init({ duration: 800, once: true });
 
+        // ================= LOGIC SLIDER TESTIMONI =================
+        const track = document.getElementById('testi-track');
+        const slides = document.querySelectorAll('.testi-slide');
+        const dotsContainer = document.getElementById('slider-dots');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Generate Dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = `w-3 h-3 rounded-full cursor-pointer transition-colors ${i === 0 ? 'bg-playful-blue' : 'bg-slate-300'}`;
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.childNodes;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.className = `w-3 h-3 rounded-full cursor-pointer transition-colors ${i === currentSlide ? 'bg-playful-blue' : 'bg-slate-300'}`;
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Ganti slide setiap 5 detik
+        }
+        resetInterval(); // Mulai autoplay
+
+
+        // ================= LOGIC MODAL VIDEO =================
+        const modal = document.getElementById('videoModal');
+        const modalContent = document.getElementById('modalContent');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoPlaceholder = document.getElementById('videoPlaceholder');
+
+        // Data Proyek (Nanti Anda bisa tambahkan link embed YouTube/Drive di parameter 'videoUrl')
+        const projectData = {
+            'game1': {
+                title: 'Game Tangkap Apel 🍎',
+                desc: 'Dalam project ini, anak akan memprogram logika batas waktu, skor, dan pergerakan objek menggunakan Scratch dasar.',
+                videoUrl: '' // Contoh: 'https://www.youtube.com/embed/XXXXX'
+            },
+            'game2': {
+                title: 'Ninja Face Tracking 📸',
+                desc: 'Keren! Kita menggunakan ekstensi Artificial Intelligence Kamera di Scratch agar karakter bisa mengikuti gerak wajah/hidung anak.',
+                videoUrl: '' 
+            },
+            'game3': {
+                title: 'Dinosaurus di Kamar 🦖',
+                desc: 'Project Augmented Reality menggunakan Assemblr Edu & Kivicube. Anak bisa memunculkan dinosaurus yang bisa dilihat lewat layar HP di ruang tamu!',
+                videoUrl: ''
+            }
+        };
+
+        function openVideoModal(projectId) {
+            const data = projectData[projectId];
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDesc').innerText = data.desc;
+            
+            // Set Video Source
+            if(data.videoUrl) {
+                videoPlayer.src = data.videoUrl;
+                videoPlayer.style.display = 'block';
+                videoPlaceholder.style.display = 'none';
+            } else {
+                videoPlayer.src = '';
+                videoPlayer.style.display = 'none';
+                videoPlaceholder.style.display = 'flex';
+            }
+
+            // Tampilkan Modal dengan Animasi
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Sedikit delay agar transisi opacity terlihat
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeVideoModal() {
+            // Animasi tutup
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            // Stop video yang sedang berjalan
+            videoPlayer.src = '';
+
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 300); // Menunggu transisi selesai
+        }
+
+        // Tutup modal jika user klik area luar kotak putih
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeVideoModal();
+        });
+
+
+        // ================= LOGIC WHATSAPP FORM =================
         document.getElementById('waForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const parent = document.getElementById('parent').value;
             const child = document.getElementById('child').value;
             const topic = document.getElementById('topic').value;
             
-            const msg = `Halo RIKOU Junior! Saya ${parent}, ingin mendaftarkan anak saya ${child} untuk mengikuti kelas weekend topik: ${topic}. Mohon info jadwal dan langkah selanjutnya ya Coach Paulus. Terima kasih!`;
+            const msg = `Halo Coach Paulus! Saya ${parent}, ingin mendaftarkan anak saya ${child} untuk mencoba kelas akhir pekan RIKOU Junior. Kami tertarik dengan paket: *${topic}*. Boleh info jadwalnya?`;
             const phone = "6281234567890"; // Ganti dengan nomor WhatsApp Anda
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         });
