@@ -5,127 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIKOU Junior - Koding & AR untuk Anak</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .bg-cyber-green { background-color: #39FF14; }
-        .text-cyber-green { color: #32CD32; }
-        .border-cyber-green { border-color: #39FF14; }
-        .bg-soft-white { background-color: #F8FAFC; }
+        body { font-family: 'Quicksand', sans-serif; }
+        h1, h2, h3, .brand { font-family: 'Fredoka One', cursive; }
         
-        /* Animasi Mengapung untuk Elemen Anak-anak */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .bg-playful-blue { background-color: #4A90E2; }
+        .text-playful-blue { color: #4A90E2; }
+        .bg-sunny-yellow { background-color: #FFD93D; }
+        .bg-magic-purple { background-color: #A855F7; }
+        .bg-mint { background-color: #6BCB77; }
+        
+        .blob {
+            position: absolute;
+            z-index: -1;
+            filter: blur(40px);
+            opacity: 0.4;
         }
-        .float-animation { animation: float 3s ease-in-out infinite; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .float-anim { animation: float 4s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-soft-white font-sans text-gray-800">
+<body class="bg-slate-50 overflow-x-hidden">
 
-    <nav class="p-6 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
-        <div class="text-2xl font-bold tracking-tighter">RIKOU <span class="text-cyber-green">JUNIOR</span></div>
-        <a href="#daftar" class="bg-black text-white px-6 py-2 rounded-full hover:bg-cyber-green hover:text-black transition duration-300">Daftar Sekarang</a>
+    <div class="blob bg-sunny-yellow w-64 h-64 rounded-full top-0 -left-20"></div>
+    <div class="blob bg-playful-blue w-80 h-80 rounded-full bottom-0 -right-20"></div>
+
+    <nav class="p-5 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="brand text-3xl tracking-wide text-playful-blue">RIKOU<span class="text-orange-400">JUNIOR</span></div>
+        <a href="#daftar" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-2 rounded-full transition-all shadow-md">Daftar Kelas!</a>
     </nav>
 
-    <header class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                Wujudkan Imajinasi Si Kecil Lewat <span class="text-cyber-green">Koding & Realitas Virtual.</span>
+    <header class="container mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center relative">
+        <div class="md:w-1/2 text-center md:text-left z-10" data-aos="fade-up">
+            <span class="inline-block bg-white text-orange-500 px-4 py-1 rounded-full text-sm font-bold shadow-sm mb-4 border border-orange-100">🚀 Online Short Course</span>
+            <h1 class="text-4xl md:text-6xl leading-tight mb-6 text-slate-800">
+                Wujudkan <span class="text-playful-blue">Imajinasi</span> Si Kecil Lewat <span class="text-purple-500">Koding</span> & <span class="text-mint text-emerald-500">AR.</span>
             </h1>
-            <p class="text-lg mb-8 text-gray-600">Private Short Course untuk kelas 1-4 SD. Belajar membuat game AI dan keajaiban AR dengan cara yang paling seru!</p>
-            <div class="flex space-x-4">
-                <a href="#program" class="bg-cyber-green text-black font-bold px-8 py-4 rounded-xl shadow-lg hover:scale-105 transition transform">Lihat Program</a>
-                <a href="#profil" class="border-2 border-gray-300 px-8 py-4 rounded-xl hover:border-cyber-green transition">Tentang Coach</a>
+            <p class="text-lg text-slate-600 mb-8 font-medium">Belajar bikin game AI dan memunculkan monster 3D langsung dari rumah. Seru, mudah, dan menyenangkan!</p>
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                <a href="#program" class="bg-playful-blue text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:scale-105 transition-transform">Pilih Kelas</a>
+                <a href="#daftar" class="bg-sunny-yellow text-slate-800 font-bold px-10 py-4 rounded-2xl shadow-lg shadow-yellow-100 hover:scale-105 transition-transform">Trial Gratis</a>
             </div>
         </div>
-        <div class="md:w-1/2 flex justify-center float-animation">
-            <div class="w-72 h-72 bg-cyber-green rounded-full flex items-center justify-center shadow-2xl">
-                <span class="text-8xl">🚀</span>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
+            <div class="float-anim bg-white p-6 rounded-[2rem] shadow-2xl rotate-3 relative z-10">
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=rikou&backgroundColor=b6e3f4" alt="Robot" class="w-64 h-64">
             </div>
+            <div class="absolute -top-10 right-10 float-anim" style="animation-delay: 1s text-5xl">🎮</div>
+            <div class="absolute -bottom-5 left-10 float-anim" style="animation-delay: 2s text-5xl">✨</div>
+            <div class="absolute top-1/2 -left-5 text-4xl">🐱</div>
         </div>
     </header>
 
-    <section id="program" class="py-20 bg-white">
+    <section id="program" class="py-20">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Program Belajar Seru</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="p-8 border-2 border-soft-white rounded-3xl hover:border-cyber-green transition duration-300 shadow-sm" data-aos="zoom-in">
-                    <div class="text-4xl mb-4">🐱</div>
-                    <h3 class="text-2xl font-bold mb-4">Game Dev with Scratch</h3>
-                    <p class="text-gray-600 mb-4">Dari membuat animasi sederhana hingga menggunakan fitur **Artificial Intelligence (AI)** di Scratch.</p>
-                    <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold">Free Basic Available</span>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-slate-800 mb-4">Materi Apa Yang Akan Dipelajari?</h2>
+                <div class="w-24 h-2 bg-sunny-yellow mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-[2.5rem] border-b-8 border-playful-blue shadow-xl hover:-translate-y-2 transition-all" data-aos="zoom-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🐱</div>
+                    <h3 class="text-2xl mb-4 text-playful-blue">Scratch Game Mastery</h3>
+                    <ul class="text-slate-600 space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Dasar Logika Koding</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Membuat Game Seru</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Integrasi **AI (Kecerdasan Buatan)**</li>
+                    </ul>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400 bg-slate-100 px-3 py-1 rounded-full">Mulai dari Gratis</span>
                 </div>
-                <div class="p-8 border-2 border-soft-white rounded-3xl hover:border-cyber-green transition duration-300 shadow-sm" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-4xl mb-4">📱</div>
-                    <h3 class="text-2xl font-bold mb-4">Augmented Reality (AR)</h3>
-                    <p class="text-gray-600 mb-4">Mempelajari Assemblr Edu & Kivicube untuk memunculkan objek 3D imajinasimu ke dunia nyata!</p>
-                    <span class="bg-gray-100 px-3 py-1 rounded text-sm font-semibold">Freemium Project</span>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border-b-8 border-purple-500 shadow-xl hover:-translate-y-2 transition-all" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-6">👓</div>
+                    <h3 class="text-2xl mb-4 text-purple-600">Magic AR Creator</h3>
+                    <ul class="text-slate-600 space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Belajar Assemblr Edu</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Model 3D dengan Kivicube</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Proyek AR di Dunia Nyata</li>
+                    </ul>
+                    <span class="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-50 px-3 py-1 rounded-full">Freemium Project</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="profil" class="py-20 bg-soft-white">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold mb-8">Belajar Langsung dari Pakarnya</h2>
-                <div class="bg-white p-8 rounded-3xl shadow-xl flex flex-col items-center" data-aos="flip-up">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-4xl italic font-bold text-gray-400">P</div>
-                    <h4 class="text-xl font-bold">Coach Paulus</h4>
-                    <p class="text-cyber-green font-semibold mb-4 text-sm tracking-widest uppercase">Dosen IT | MCE & GCE Certified</p>
-                    <p class="text-gray-600 leading-relaxed italic">
-                        "Dengan pengalaman mengajar lebih dari 10 tahun di universitas, saya menyederhanakan konsep teknologi kompleks menjadi materi yang mudah dipahami dan sangat menyenangkan bagi anak-anak."
-                    </p>
+    <section id="coach" class="bg-playful-blue py-20 text-white rounded-[3rem] mx-4">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3 flex justify-center">
+                <div class="relative">
+                    <div class="w-48 h-48 bg-white rounded-full overflow-hidden border-8 border-blue-400">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Paul" alt="Coach Paulus">
+                    </div>
+                    <div class="absolute -bottom-4 bg-sunny-yellow text-slate-800 font-bold px-4 py-1 rounded-lg text-sm">Coach Paulus</div>
+                </div>
+            </div>
+            <div class="md:w-2/3 text-center md:text-left">
+                <h2 class="text-3xl mb-6 uppercase tracking-tight">Belajar Dari Ahlinya!</h2>
+                <p class="text-xl opacity-90 leading-relaxed mb-6">
+                    Satu-satunya kurikulum anak yang didesain langsung oleh <strong>Dosen IT berpengalaman 10+ tahun</strong>. Saya memegang sertifikasi <strong>MCE (Microsoft)</strong> dan <strong>GCE (Google)</strong> untuk memastikan pengajaran standar dunia!
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold border border-white/30">Microsoft Certified</span>
+                    <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold border border-white/30">Google Certified</span>
+                    <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-bold border border-white/30">10+ Years Exp</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="daftar" class="py-20 bg-black text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between bg-zinc-900 p-10 rounded-3xl border border-zinc-800">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-4xl font-bold mb-4">Pesan Kelas Weekend</h2>
-                    <p class="text-gray-400">Isi formulir singkat ini dan kami akan segera menghubungi Anda via WhatsApp untuk konfirmasi jadwal.</p>
-                </div>
-                <div class="md:w-1/2 w-full">
-                    <form id="orderForm" class="space-y-4 text-black">
-                        <input type="text" id="parentName" placeholder="Nama Orang Tua" class="w-full p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyber-green" required>
-                        <input type="text" id="childName" placeholder="Nama Anak (Kelas)" class="w-full p-4 rounded-xl focus:outline-none" required>
-                        <select id="courseType" class="w-full p-4 rounded-xl focus:outline-none">
-                            <option>Scratch Game (Free Basic)</option>
-                            <option>Scratch AI (Freemium)</option>
-                            <option>Augmented Reality (Freemium)</option>
+    <section id="daftar" class="py-24">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden border border-slate-100">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sunny-yellow rounded-bl-full opacity-20"></div>
+                
+                <h2 class="text-3xl text-center text-slate-800 mb-10">Pesan Slot Weekend Anak Ayah/Bunda</h2>
+                
+                <form id="waForm" class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-bold text-slate-700 ml-2 text-sm">Nama Ayah / Bunda</label>
+                        <input type="text" id="parent" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-playful-blue focus:outline-none transition-all" placeholder="Contoh: Pak Budi" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-bold text-slate-700 ml-2 text-sm">Nama & Kelas Anak</label>
+                        <input type="text" id="child" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-playful-blue focus:outline-none transition-all" placeholder="Contoh: Andi - Kelas 3 SD" required>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="font-bold text-slate-700 ml-2 text-sm">Pilih Fokus Minat</label>
+                        <select id="topic" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl focus:border-playful-blue focus:outline-none transition-all appearance-none cursor-pointer">
+                            <option>Belajar Scratch (Gratis Basic)</option>
+                            <option>Membuat Game AI (Premium)</option>
+                            <option>Bikin Augmented Reality (Premium)</option>
                         </select>
-                        <button type="submit" class="w-full bg-cyber-green text-black font-bold p-4 rounded-xl hover:scale-105 transition duration-300">Daftar via WhatsApp</button>
-                    </form>
-                </div>
+                    </div>
+                    <button type="submit" class="md:col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-5 rounded-2xl shadow-xl shadow-orange-100 transition-all text-xl mt-4">
+                        Daftar via WhatsApp Sekarang! 📱
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 RIKOU Junior. Built with Logic and Fun.</p>
+    <footer class="py-12 text-center text-slate-400">
+        <p class="font-bold mb-2">RIKOU JUNIOR</p>
+        <p class="text-sm">© 2026 CV Rikou Indonesia. All Rights Reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inisialisasi Animate On Scroll
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 800, once: true });
 
-        // Handler WhatsApp Form
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
+        document.getElementById('waForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const parent = document.getElementById('parentName').value;
-            const child = document.getElementById('childName').value;
-            const course = document.getElementById('courseType').value;
+            const parent = document.getElementById('parent').value;
+            const child = document.getElementById('child').value;
+            const topic = document.getElementById('topic').value;
             
-            const message = `Halo RIKOU Junior! Saya ${parent}, ingin mendaftarkan anak saya ${child} untuk kelas weekend: ${course}. Mohon info jadwalnya ya Coach.`;
-            const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`; // Ganti dengan nomor Anda
-            
-            window.open(whatsappUrl, '_blank');
+            const msg = `Halo RIKOU Junior! Saya ${parent}, ingin mendaftarkan anak saya ${child} untuk mengikuti kelas weekend topik: ${topic}. Mohon info jadwal dan langkah selanjutnya ya Coach Paulus. Terima kasih!`;
+            const phone = "6281234567890"; // Ganti dengan nomor WhatsApp Anda
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         });
     </script>
 </body>
